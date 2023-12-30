@@ -66,7 +66,9 @@ function App() {
         <div
           className={`card w-full mx-[8px] md:w-6/12 relative px-[8px] py-[2rem] md:py-[2rem] md:px-[3rem] shadow-lg rounded-lg text-slate-700`}
           style={{
-            background: `linear-gradient(to left, ${color1}, ${color2})`,
+            background: `linear-gradient(${
+              Math.PI * Math.random() * 100
+            }deg, ${color1}, ${color2})`,
           }}
         >
           <img
