@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 600px) {
+  .card {
+    display: grid;
+    grid-template-areas: "image" "name" "address" "contact";
+  }
+
+  .card div:nth-child(1) {
+    grid-area: image;
+  }
+  .card div:nth-child(2) {
+    grid-area: address;
+  }
+  .card div:nth-child(3) {
+    grid-area: name;
+  }
+  .card div:nth-child(4) {
+    grid-area: contact;
+  }
+}
