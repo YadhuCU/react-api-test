@@ -34,10 +34,17 @@ function App() {
       console.log(err);
     }
   };
+
   useEffect(() => {
     getData();
   }, []);
+
+  useEffect(() => {
+    handleChange();
+  }, [users]);
+
   const handleChange = () => {
+    console.log("calling handleChange, ", users);
     if (users.length > 0) {
       const randomNumber = Math.floor(Math.random() * users.length);
       const randomColor = Math.floor(Math.random() * colors.length);
