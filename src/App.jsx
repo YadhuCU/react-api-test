@@ -23,7 +23,8 @@ const colors = [
 function App() {
   const [users, setUsers] = useState([]);
   const [data, setData] = useState({});
-  const [color, setColor] = useState(colors[0]);
+  const [color1, setColor1] = useState(colors[0]);
+  const [color2, setColor2] = useState(colors[2]);
 
   const getData = async () => {
     try {
@@ -47,9 +48,11 @@ function App() {
     console.log("calling handleChange, ", users);
     if (users.length > 0) {
       const randomNumber = Math.floor(Math.random() * users.length);
-      const randomColor = Math.floor(Math.random() * colors.length);
+      const randomColor1 = Math.floor(Math.random() * colors.length);
+      const randomColor2 = Math.floor(Math.random() * colors.length);
 
-      setColor(colors[randomColor]);
+      setColor1(colors[randomColor1]);
+      setColor2(colors[randomColor2]);
       setData(users[randomNumber]);
     }
   };
@@ -63,7 +66,7 @@ function App() {
         <div
           className={`card w-full mx-[8px] md:w-6/12 relative px-[8px] py-[2rem] md:py-[2rem] md:px-[3rem] shadow-lg rounded-lg text-slate-700`}
           style={{
-            backgroundColor: color,
+            background: `linear-gradient(to left, ${color1}, ${color2})`,
           }}
         >
           <img
